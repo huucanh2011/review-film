@@ -120,8 +120,9 @@ class PageController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->keyword;
-        $phims = Phim::where('ten_chinh', 'like', '%' . $keyword . '%')
-            ->orwhere('ten_phu', 'like', '%' . $keyword . '%')
+        $convertLowerCase = strtolower($keyword);
+        $phims = Phim::whereRaw("LOWER(ten_chinh) LIKE '%" . $convertLowerCase . "%'")
+            ->orWhereRaw("LOWER(ten_phu) LIKE '%" . $convertLowerCase . "%'")
             ->get();
         $baiDangs = BaiDang::where('tieu_de', 'like', '%' . $keyword . '%')->get();
 
