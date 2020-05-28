@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class UserSeeder extends Seeder
 {
@@ -15,7 +16,7 @@ class UserSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => bcrypt('123456'),
             'ten_hien_thi' => 'Admin',
-            'quyen_id' => '1'
+            'quyen_id' => 1
         ]);
     }
 }

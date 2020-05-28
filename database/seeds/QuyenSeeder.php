@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class QuyenSeeder extends Seeder
 {
@@ -12,17 +13,18 @@ class QuyenSeeder extends Seeder
     public function run()
     {
         DB::table('quyens')->insert([
-            'id' => 1,
-            'ten_quyen' => 'Admin',
-        ],
-        [
-            'id' => 2,
-            'ten_quyen' => 'Hãng phim',
-        ],
-        [
-            'id' => 3,
-            'ten_quyen' => 'Thành Viên'
-        ]
-        );
+            [
+                'id' => 1,
+                'ten_quyen' => 'Admin',
+            ],
+            [
+                'id' => 2,
+                'ten_quyen' => 'Hãng phim',
+            ],
+            [
+                'id' => 3,
+                'ten_quyen' => 'Thành Viên'
+            ]
+        ]);
     }
 }
